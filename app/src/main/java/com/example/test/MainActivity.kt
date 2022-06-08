@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val getContentActivity = registerForActivityResult(ActivityResultContracts.GetContent(), MyCallBack())
-
+        
 
         val button: Button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
