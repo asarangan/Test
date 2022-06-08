@@ -12,17 +12,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var test:Test = Test()
+        val test:Test = Test()
 
         val getContentActivity = registerForActivityResult(ActivityResultContracts.GetContent(), MyCallBack(test))
 
 
         val button: Button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
-            Log.d(TAG, "Before Launch")
             getContentActivity.launch("*/*")
             Log.d(TAG,test.x.toString())
-            Log.d(TAG, "After Launch")
         }
     }
 
